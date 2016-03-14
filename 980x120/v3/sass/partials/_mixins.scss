@@ -1,0 +1,99 @@
+// ==================== Banner box size =============
+
+@mixin size ($width, $height, $background-color) {
+  width: $width;
+  height: $height;
+  background-color: $background-color;
+}
+
+// ==================== Banner box background =============
+
+@mixin background ($background-image, $background-position, $background-size) {
+  background-image: url("../img/#{$background-image}.png");
+  background-position: $background-position;
+  background-size: $background-size;
+  background-repeat: no-repeat;
+}
+
+@mixin animation ($name, $duration, $count, $delay, $fill) {
+  animation: $name;
+  animation-duration: $duration;
+  animation-iteration-count: $count;
+  animation-delay: $delay;
+  animation-fill-mode: $fill;
+}
+
+// ==================== Text settings =============
+
+@mixin text ($family, $size,$line, $weight, $color) {
+  font-family: $family;
+  font-size: $size;
+  line-height: $line;
+  font-weight: $weight;
+  color: $color;
+}
+
+// ==================== Position =============
+@mixin position ($top, $left) {
+  top: $top;
+  left: $left;
+}
+
+// ==================== Button =============
+
+@mixin button () {
+  display: block;
+  padding: 0 40px;
+  text-align: center;
+  text-decoration: none;
+  background-color: $button-background;
+  transition: .2s linear;
+  &:hover {
+    background-color: $button-background-hover;
+  }
+}
+
+
+// ==================== Keyframes =============
+
+
+// == no1
+@keyframes text-enter-t-b {
+  0%    {opacity: 0;}
+  100%  {opacity: 1; transform: translate(30px, 0);}
+}
+
+// == no2
+@keyframes text-enter-l-r-fade {
+  0%   {opacity: 0;}
+  60%  {opacity: 1; transform: translateX(30px);}
+  90%  {opacity: 1; transform: translateX(30px);}
+  100% {opacity: 0; transform: translateX(30px);}
+}
+
+// == no3
+@keyframes fade-in {
+  0%   {opacity: 0;}
+  100% {opacity: 1; transform: translateX(0);}
+}
+
+// == no4
+@keyframes scale-up {
+  0%   {}
+  100% {transform: scale(1);}
+}
+
+// == no5
+@keyframes slide-down {
+  0%   {}
+  100% {top: 12px;}
+}
+
+// ==no6
+@keyframes button {
+  0%   {}
+  100% {transform: translateY(0);}
+}
+
+
+

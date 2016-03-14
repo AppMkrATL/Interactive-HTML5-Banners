@@ -1,0 +1,17 @@
+{
+  "version": "1.0",
+  "title": "300x300 Test Banner",
+  "description": "Test Banner",
+  "width": "300",
+  "height": "300",
+  "events": {
+    "enabled": 0,
+    "list": {
+
+    }
+  },
+  "clicktags": {
+    "clickTAG": "http://www.pelicanselfstorage.fi"
+  },
+  "source": "index.html"
+}

@@ -1,0 +1,253 @@
+/* ============== Fonts ==================*/
+
+@font-face {
+  font-family: 'ITC Avant Garde Gothic Std';
+  src: url('ITCAvantGardeStd-Md.eot');
+  src: url('../fonts/ITCAvantGardeStd-Md.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/ITCAvantGardeStd-Md.woff') format('woff'),
+  url('../fonts/ITCAvantGardeStd-Md.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ITC Avant Garde Gothic Std Book';
+  src: url('../fonts/ITCAvantGardeStd-Bk.eot');
+  src: url('../fonts/ITCAvantGardeStd-Bk.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/ITCAvantGardeStd-Bk.woff') format('woff'),
+  url('../fonts/ITCAvantGardeStd-Bk.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ITC Avant Garde Gothic Std Extra';
+  src: url('../fonts/ITCAvantGardeStd-XLt.eot');
+  src: url('../fonts/ITCAvantGardeStd-XLt.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/ITCAvantGardeStd-XLt.woff') format('woff'),
+  url('../fonts/ITCAvantGardeStd-XLt.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ITC Avant Garde Gothic Std';
+  src: url('../fonts/ITCAvantGardeStd-Bold.eot');
+  src: url('../fonts/ITCAvantGardeStd-Bold.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/ITCAvantGardeStd-Bold.woff') format('woff'),
+  url('../fonts/ITCAvantGardeStd-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ITC Avant Garde Gothic Std Demi';
+  src: url('../fonts/ITCAvantGardeStd-Demi.eot');
+  src: url('../fonts/ITCAvantGardeStd-Demi.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/ITCAvantGardeStd-Demi.woff') format('woff'),
+  url('../fonts/ITCAvantGardeStd-Demi.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* ============== Grid ==================*/
+
+#banner-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 468px;
+  max-width: 468px !important;
+  max-height: 400px !important;
+  overflow: hidden;
+  #banner-box-1 {
+    @include size(468px, 400px, $primary-middle-green);
+    max-width: 468px !important;
+    max-height: 400px !important;
+    display: block;
+    position: relative;
+    overflow: hidden;
+
+    // ==== logo ==========
+    .logo {
+      z-index: 1000;
+      height: 152px;
+      display: flex;
+      justify-content: flex-end;
+      flex-direction: row;
+      img {
+        @include animation(logo, .5s, 1, .5s, forwards);
+        z-index: 1000;
+        transform: translateX(300px);
+      }
+    }
+
+    // ==== text ==========
+    .text {
+      position: absolute;
+      width: 100%;
+      top: 190px;
+      left: 0;
+      p:first-child {
+        @include text('ITC Avant Garde Gothic Std', 22px, 1.3, 600, $white-color);
+        @include animation(text-enter-l-r-fade, 2s, 1, 1s, forwards);
+        opacity: 1;
+        transform: translate(-350px);
+      }
+      p:last-child {
+        @include text('ITC Avant Garde Gothic Std Demi', 20px, 1.3, normal, $white-color);
+        @include animation(text-enter-l-r, 2s, 1, 3s, forwards);
+        transform: translate(-250px, -50px);
+        opacity: 0;
+      }
+    }
+
+    // ==== button ==========
+    .cta {
+      position: absolute;
+      top: 320px;
+      left: 50px;
+      z-index: 3;
+      a {
+        @include text('ITC Avant Garde Gothic Std Book', 16px, 45px, normal, $white-color);
+        @include animation(text-enter-l-r-button, .5s, 1, .5s, forwards);
+        @include button ();
+        transform: translate(-550px);
+      }
+    }
+
+    // ==== info box ==========
+    .info {
+      @include animation(info-enter, 2s, 1, 3s, forwards);
+      transform: translateX(-250px);
+      position: absolute;
+      top: 260px;
+      left: 50px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      p {
+        @include text('ITC Avant Garde Gothic Std Book', 16px, 1.3, 800, $text-color);
+        margin: 0;
+      }
+      a {
+        @include text('ITC Avant Garde Gothic Std Book', 16px, 1.3, 800, $text-color);
+        margin: 0;
+        text-decoration: none;
+        transition: .3s linear;
+        &:hover {
+          color: darken($text-color, 10%);
+        }
+      }
+      .bold {
+        @include text('ITC Avant Garde Gothic Std', 14px, 1.3, 800, $text-color);
+        margin-right: 10px;
+      }
+    }
+
+    // ==== items box ==========
+    .items {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 0;
+      left: 0;
+      .item-parent {
+        @include animation(slide-right-items, 5s, 1, 1s, forwards);
+        @include position(20px, 0);
+        position: relative;
+        z-index: 2;
+        .item-1,
+        .item-2,
+        .item-3,
+        .item-4,
+        .item-5,
+        .item-6,
+        .item-7,
+        .item-8,
+        .item-9,
+        .item-10,
+        .item-11,
+        .item-12,
+        .item-13,
+        .item-14,
+        .item-15,
+        .item-16,
+        .item-17,
+        .item-18 {
+          position: absolute;
+          transform: scale(.8);
+          opacity: 0.6;
+          height: 110px;
+        }
+        .item-1 {
+          @include position(-30px, -70px);
+        }
+        .item-2 {
+          @include position(10px, -100px);
+        }
+        .item-3 {
+          @include position(-20px, -130px);
+        }
+        .item-4 {
+          @include position(50px, -170px);
+        }
+        .item-5 {
+          @include position(-30px, -210px);
+        }
+        .item-6 {
+          @include position(10px, -260px);
+        }
+        .item-7 {
+          @include position(80px, -230px);
+        }
+        .item-8 {
+          @include position(90px, -290px);
+        }
+        .item-9 {
+          @include position(50px, -340px);
+        }
+        .item-10 {
+          @include position(-30px, -370px);
+        }
+        .item-11 {
+          @include position(10px, -400px);
+        }
+        .item-12 {
+          @include position(-25px, -440px);
+        }
+        .item-13 {
+          @include position(50px, -470px);
+        }
+        .item-14 {
+          @include position(-30px, -520px);
+        }
+        .item-15 {
+          @include position(10px, -580px);
+        }
+        .item-16 {
+          @include position(80px, -550px);
+        }
+        .item-17 {
+          @include position(90px, -610px);
+        }
+        .item-18 {
+          @include position(50px, -660px);
+        }
+      }
+    }
+
+    // ==== Discount image ==========
+    .image {
+      @include animation(roll-right, 2s, 1, 4s, forwards);
+      opacity: 0;
+      position: absolute;
+      top: 250px;
+      right: 600px;
+      img {
+        width: 160px;
+        height: 140px;
+      }
+    }
+  }
+}

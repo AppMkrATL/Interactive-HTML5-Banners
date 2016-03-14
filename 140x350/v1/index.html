@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test banner - 140x350</title>
+
+    <link href="css/banner.css" type="text/css" rel="stylesheet"/>
+
+    <script>
+        setInterval(function(){
+                    var container = document.getElementById('banner-main');
+                    var tmp = container.innerHTML;
+                    container.innerHTML= tmp;
+                }, 8000 // length of the whole show in milliseconds
+        );
+    </script>
+
+    <script>
+        document.write('<script src="'+ (window.API_URL || 'https://s1.adform.net/banners/scripts/rmb/Adform.DHTML.js?bv='+ Math.random()) +'"><\/script>');
+    </script>
+</head>
+<body>
+
+<!-- Main banner box -->
+<div id="banner-main">
+
+    <div id="banner-box-1">
+
+        <!-- Pelikan  -->
+        <div class="logo">
+            <img src="img/logo-140x350.png">
+        </div>
+
+        <!-- Main text -->
+        <div class="text">
+            <p>Maalaa seinät, älä sohvaa.</p>
+            <p>Vie tavarat turvaan remontin tieltä.</p>
+        </div>
+
+        <!-- Button -->
+        <div class="cta">
+            <a href="#">LUE LISÄÄ</a>
+        </div>
+
+        <!-- Phone & Website -->
+        <div class="info">
+            <p><span class="bold">Soita</span> 0207 007 700</p>
+            <a href="http://tilaakaikelle.fi" target="_blank"><span class="bold">tai katso </span> tilaakaikelle.fi</a>
+        </div>
+
+        <div class="image">
+            <img src="img/50.png"/>
+        </div>
+
+        <!-- Storage items -->
+        <div class="items">
+            <img src="img/elem_lamppu.png">
+            <img src="img/elem_sohva.png">
+            <img src="img/elem_sanky.png">
+        </div>
+
+
+    </div>
+
+</div>
+
+
+</body>
+</html>
